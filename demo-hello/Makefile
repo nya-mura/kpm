@@ -1,7 +1,7 @@
-# ifndef TARGET_COMPILE
-#     $(error TARGET_COMPILE not set)
-# endif
-#
+ifndef TARGET_COMPILE
+    $(error TARGET_COMPILE not set)
+endif
+
 ifndef KP_DIR
     KP_DIR = ../KernelPatch
 endif

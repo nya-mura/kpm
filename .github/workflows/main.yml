@@ -17,8 +17,9 @@ jobs:
 
       - name: Run Makefile
         run: |
+          sudo apt-get install -y gcc-aarch64-none-elf binutils-aarch64-none-elf
           cd demo-hello
-          make
+          make TARGET_COMPILE=aarch64-none-elf-
 
       - name: Upload KPM artifacts
         uses: actions/upload-artifact@v4
