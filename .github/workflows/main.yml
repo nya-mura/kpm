@@ -14,17 +14,18 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Install toolchain
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y gcc-aarch64-none-elf binutils-aarch64-none-elf
-
+      # - name: Install toolchain
+      #   run: |
+      #     sudo apt-get update
+      #     sudo apt-get install -y gcc-aarch64-none-elf binutils-aarch64-none-elf
+      #
 
       - name: Run Makefile
         run: |
           
           cd demo-hello
-          make TARGET_COMPILE=aarch64-none-elf-
+          make clean
+          make
 
       - name: Upload KPM artifacts
         uses: actions/upload-artifact@v4
